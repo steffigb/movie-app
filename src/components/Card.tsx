@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type CardProps = { 
     heading: string
 }
 
 const Card = ({heading}: CardProps) => {
+    const [count, setCount] = useState<number>(0);
     const [hasLiked, setHasLiked] = useState<boolean>(false);
 
-    return (
-        <div className="card">
-            <h2> {heading} </h2>
+    useEffect(() => {
+        console.log(`${heading} has been liked: ${hasLiked}`);
+    }, [hasLiked, heading]);
 
-           <button onClick={() => setHasLiked(!hasLiked)}>
+    return (
+        <div className="card" onClick={() => setCount((prevState) => prevState + 1)}>
+            <h2> {heading} - {count}</h2>
+
+           <button onClick={() => setHasLiked((prevState) => !prevState)}>
             {hasLiked ? "💚" : "🤍"}
            </button>
         </div>
