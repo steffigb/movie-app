@@ -1,16 +1,24 @@
-import Card from './components/Card'
+/* import Card from './components/Card' */
 import './index.css'
 
 const App = () => {
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
+    <main>
+      <div className= "pattern"/>
+
+      <div>
+        <header>
+          <h1>Find Movies</h1>
+        </header>
+
+      </div>
+{/* <h1 className="text-3xl font-bold underline">
         Hello world!
       </h1>
       <Card heading="Star Wars"/>
-      <Card heading="Dune" />
-    </div>
+      <Card heading="Dune" /> */}
+    </main>
 
   )
 }
